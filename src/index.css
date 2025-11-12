@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake;
+}
+
+
+body {
+  font-family: "Geist", sans-serif;
+}
+
+:root {
+  --color-primary: #1e3a8a; /* blue-900 */
+}
+
+/* Custom class for primary text */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary{
+  background-color: var(--color-primary);
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
