@@ -6,7 +6,7 @@ import ElectricityBill from './../assets/electricity-bill.jpg'
 import { ArrowRight } from 'lucide-react'
 function Bill({bill}) {
     return (
-        <div className="overflow-hidden hover:shadow-lg shadow-lg dark:shadow-blue-800 border border-gray-200 dark:border-gray-900 rounded-lg transition-shadow">
+        <div className="overflow-hidden hover:shadow-lg shadow-lg dark:bg-gray-800 border border-gray-200 dark:border-gray-900 rounded-lg transition-shadow">
             <div className="relative h-52 overflow-hidden">
                 <img
                     src={bill?.image || "/placeholder.svg"}
@@ -35,7 +35,7 @@ function Bill({bill}) {
                 <div className="border-t border-border pt-4 mb-4">
                     <div className="flex justify-between items-center mb-4">
                         <span className="dark:text-white">Amount:</span>
-                        <span className="text-xl font-bold text-primary dark:text-white">{bill?.amount} BDT</span>
+                        <span className="text-xl font-bold dark:text-white">{bill?.amount} BDT</span>
                     </div>
 
                     <Link to={`/bills/${bill?._id}`} className="w-full">

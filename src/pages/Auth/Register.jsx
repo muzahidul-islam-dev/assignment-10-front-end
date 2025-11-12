@@ -67,14 +67,14 @@ function Register() {
     return (
         <div className="min-h-screen flex items-center justify-center py-12 px-4">
             <div className="w-full max-w-md">
-                <div className="p-8 shadow-xl border border-gray-100">
+                <div className="p-8 shadow-xl dark:bg-gray-800 border border-gray-100 dark:border-gray-800 rounded-lg">
 
-                    <h1 className="text-2xl font-bold text-foreground text-center mb-2">Register to your account</h1>
+                    <h1 className="text-2xl font-bold text-center mb-2">Register to your account</h1>
                     <p className="text-center text-sm mb-8">Welcome! Please Register to continue.</p>
 
                     <form onSubmit={handleSubmit} className="space-y-4 mb-6">
                         <div>
-                            <label className="text-sm font-medium text-foreground block mb-2">Full Name</label>
+                            <label className="text-sm font-medium block mb-2">Full Name</label>
                             <input
                                 type="text"
                                 name="name"
@@ -86,7 +86,7 @@ function Register() {
                             />
                         </div>
                         <div>
-                            <label className="text-sm font-medium text-foreground block mb-2">Photo URL</label>
+                            <label className="text-sm font-medium block mb-2">Photo URL</label>
                             <input
                                 type="text"
                                 name="photoURL"
@@ -98,7 +98,7 @@ function Register() {
                             />
                         </div>
                         <div>
-                            <label className="text-sm font-medium text-foreground block mb-2">Email Address</label>
+                            <label className="text-sm font-medium block mb-2">Email Address</label>
                             <input
                                 type="email"
                                 name="email"
@@ -111,7 +111,7 @@ function Register() {
                         </div>
 
                         <div>
-                            <label className="text-sm font-medium text-foreground block mb-2">Password</label>
+                            <label className="text-sm font-medium block mb-2">Password</label>
                             <div className="relative">
                                 <input
                                     type={showPassword ? "text" : "password"}
@@ -125,7 +125,7 @@ function Register() {
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-3 top-1/2 -translate-y-1/2 hover:text-foreground transition"
+                                    className="absolute right-3 top-1/2 -translate-y-1/2 hover transition"
                                 >
                                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                                 </button>
@@ -142,7 +142,7 @@ function Register() {
                             <div className="w-full border-t border-border" />
                         </div>
                         <div className="relative flex justify-center text-xs uppercase">
-                            <span className="px-2 bg-white">Or continue with</span>
+                            <span className="px-2 bg-white dark:bg-gray-800">Or continue with</span>
                         </div>
                     </div>
 
@@ -151,12 +151,12 @@ function Register() {
                         className="w-full gap-2 mb-6 bg-transparent"
                     >
                         <img src={Google} alt="" className='h-5' />
-                                                                            Sign in with Google
+                            Sign in with Google
                     </Button>
 
                     <p className="text-center text-sm">
-                        Allready have and Account?{" "}
-                        <Link to="/auth/login" className="font-medium text-gray-900 transition">
+                        Allready have and Account? {" "}
+                        <Link to="/auth/login" className="font-medium text-gray-900 dark:text-white transition">
                             Login Here
                         </Link>
                     </p>

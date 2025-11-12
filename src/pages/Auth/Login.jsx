@@ -53,14 +53,14 @@ function Login() {
     return (
         <div className="min-h-screen flex items-center justify-center py-12 px-4">
             <div className="w-full max-w-md">
-                <div className="p-8 shadow-xl border border-gray-100">
+                <div className="p-8 shadow-xl dark:bg-gray-800 border border-gray-100 dark:border-gray-800 rounded-lg">
 
-                    <h1 className="text-2xl font-bold text-foreground text-center mb-2">Login to your account</h1>
+                    <h1 className="text-2xl font-bold text-center mb-2">Login to your account</h1>
                     <p className="text-center text-sm mb-8">Welcome back! Please login to continue.</p>
 
                     <form onSubmit={handleSubmit} className="space-y-4 mb-6">
                         <div>
-                            <label className="text-sm font-medium text-foreground block mb-2">Email Address</label>
+                            <label className="text-sm font-medium block mb-2">Email Address</label>
                             <input
                                 type="email"
                                 name="email"
@@ -73,7 +73,7 @@ function Login() {
                         </div>
 
                         <div>
-                            <label className="text-sm font-medium text-foreground block mb-2">Password</label>
+                            <label className="text-sm font-medium block mb-2">Password</label>
                             <div className="relative">
                                 <input
                                     type={showPassword ? "text" : "password"}
@@ -87,7 +87,7 @@ function Login() {
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-3 top-1/2 -translate-y-1/2 hover:text-foreground transition"
+                                    className="absolute right-3 top-1/2 -translate-y-1/2 hover transition"
                                 >
                                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                                 </button>
@@ -95,7 +95,7 @@ function Login() {
                         </div>
 
                         <div className="text-right">
-                            <Link to="#" className="text-sm text-gray-900 hover:text-primary/80 transition">
+                            <Link to="#" className="text-sm text-gray-900 dark:text-white transition">
                                 Forgot password?
                             </Link>
                         </div>
@@ -110,7 +110,7 @@ function Login() {
                             <div className="w-full border-t border-border" />
                         </div>
                         <div className="relative flex justify-center text-xs uppercase">
-                            <span className="px-2 bg-white">Or continue with</span>
+                            <span className="px-2 bg-white dark:bg-gray-800">Or continue with</span>
                         </div>
                     </div>
 
@@ -124,8 +124,8 @@ function Login() {
 
                     <p className="text-center text-sm">
                         Don't have an account?{" "}
-                        <Link to="/auth/register" className="font-medium text-gray-900 transition">
-                            Register here
+                        <Link to="/auth/register" className="font-medium text-gray-900 dark:text-white transition">
+                             Register here
                         </Link>
                     </p>
                 </div>

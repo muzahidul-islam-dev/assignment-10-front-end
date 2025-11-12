@@ -30,7 +30,7 @@ function Navbar() {
         await logout()
     }
     return (
-        <nav className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm py-3">
+        <nav className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow dark:shadow-gray-800 py-3">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <Link to="/" className="flex items-center gap-2">
