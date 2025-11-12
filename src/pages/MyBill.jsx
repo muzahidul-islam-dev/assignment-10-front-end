@@ -4,7 +4,8 @@ import { AlertCircle, Download, Edit2, Trash2 } from 'lucide-react'
 import Loading from '../components/Loading'
 import axios from 'axios'
 import { UserProvider } from '../context/AuthContext'
-
+import toast from 'react-hot-toast'
+import Swal from 'sweetalert2'
 function MyBill() {
   const [bills, setBills] = useState([])
   const [showUpdateModal, setShowUpdateModal] = useState(false)
@@ -40,12 +41,12 @@ function MyBill() {
 
   const handleEdit = (bill) => {
     document.getElementById('my_modal_2').showModal()
-    console.log(user.email)
     setFormData({
       address: bill?.address,
       phone: bill?.phone,
       amount: bill?.amount,
-      date: bill?.date
+      date: bill?.date,
+      id: bill?._id
     })
   }
 
@@ -53,11 +54,11 @@ function MyBill() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true)
-    if (formData?.phone == '' && formData?.address == '' && formData?.note == '') {
+    if (formData?.phone == '' && formData?.address == '' && formData?.amount == '' && formData?.date) {
       return toast.error('All field is required.')
     }
-    axios.post(`/bill/my-bills/${user?.email}`, formData).then(response => {
-      toast(response?.data?.message)
+    axios.patch(`/bill/my-bills/${user.email}`, formData).then(response => {
+      toast.success(response?.data?.message)
       document.getElementById('my_modal_2').close()
       setFormData({
         address: '',
@@ -65,6 +66,9 @@ function MyBill() {
         note: '',
         amount: ''
       })
+
+      setBills(response?.data?.data?.allData)
+
       setIsSubmitting(false)
     }).catch(error => {
       console.log(error)
@@ -85,6 +89,33 @@ function MyBill() {
     })
   }
 
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete(`/bill/my-bill/delete/${id}`).then(response => {
+          console.log(response)
+          setBills((prev) => prev.filter(item => item._id != id))
+          Swal.fire({
+            title: "Deleted!",
+            text: response?.data?.message,
+            icon: "success"
+          });
+        }).catch(error => {
+          console.log(error)
+        })
+
+      }
+    });
+  }
+
 
 
   if (loading) return <Loading />
@@ -102,6 +133,7 @@ function MyBill() {
             Download Report
           </Button>
         </div>
+        
 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -132,7 +164,7 @@ function MyBill() {
               </thead>
               <tbody className="divide-y divide-border">
                 {bills.map((bill) => (
-                  <tr key={bill.id} className="hover:bg-muted/50 transition">
+                  <tr key={bill._id} className="hover:bg-muted/50 transition">
                     <td className="px-6 py-4 text-sm">{bill.username}</td>
                     <td className="px-6 py-4 text-sm">{bill.email}</td>
                     <td className="px-6 py-4 text-sm font-semibold">{bill.amount}</td>
@@ -149,7 +181,7 @@ function MyBill() {
                           <Edit2 className="w-4 h-4" />
                         </button>
                         <button
-                          onClick={() => handleDelete(bill.id)}
+                          onClick={() => handleDelete(bill._id)}
                           className="p-2 rounded hover:bg-red-500 hover:text-white cursor-pointer"
                           title="Delete"
                         >
@@ -196,7 +228,7 @@ function MyBill() {
                   type="text"
                   name="date"
                   placeholder="Enter your amount"
-                  value={formData.date}
+                  defaultValue={formData.date}
                   onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                   required
                   className='border dark:border-gray-700 border-gray-200 focus:border-gray-500 dark:text-white w-full py-2 px-3 rounded my outline-none'
@@ -208,7 +240,7 @@ function MyBill() {
                   type="text"
                   name="address"
                   placeholder="Enter your address"
-                  value={formData.address}
+                  defaultValue={formData.address}
                   onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                   className='border dark:border-gray-700 border-gray-200 focus:border-gray-500 dark:text-white w-full py-2 px-3 rounded my outline-none'
                   required
@@ -221,7 +253,7 @@ function MyBill() {
                   type="tel"
                   name="phone"
                   placeholder="Enter your phone number"
-                  value={formData.phone}
+                  defaultValue={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className='border dark:border-gray-700 border-gray-200 focus:border-gray-500 dark:text-white w-full py-2 px-3 rounded my outline-none'
                   required

@@ -67,7 +67,7 @@ function SingleBill() {
             return toast.error('All field is required.')
         }
         axios.post('/bill/pay', formData).then(response => {
-            toast(response?.data?.message)
+            toast.success(response?.data?.message)
             document.getElementById('my_modal_2').close()
             setFormData({
                 ...formData,
