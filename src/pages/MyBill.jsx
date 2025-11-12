@@ -56,7 +56,7 @@ function MyBill() {
     if (formData?.phone == '' && formData?.address == '' && formData?.note == '') {
       return toast.error('All field is required.')
     }
-    axios.post(`/bill/pay/${user?.email}`, formData).then(response => {
+    axios.post(`/bill/my-bills/${user?.email}`, formData).then(response => {
       toast(response?.data?.message)
       document.getElementById('my_modal_2').close()
       setFormData({
