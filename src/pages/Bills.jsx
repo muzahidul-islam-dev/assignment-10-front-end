@@ -1,19 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Bill from '../components/Bill'
+import axios from 'axios'
+import Loading from '../components/Loading'
 
 function Bills() {
+    const [bills, setBills] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        axios.get('/bill').then(response => {
+            setBills(response?.data?.data)
+            setLoading(false)
+        }).catch(error => {
+            console.log(error)
+            setLoading(false)
+        })
+    },[])
+
+    if(loading) return <Loading />
     return (
-        <div className='bg-gray-50 dark:bg-gray-900'>
-            <section className='max-w-7xl mx-auto px-10 py-20'>
+        <section className='max-w-7xl mx-auto px-10 my-20'>
                 <h3 className='text-4xl text-center dark:text-white font-semibold'>Utility Categories</h3>
                 <div className="grid grid-cols-3 gap-10 my-10">
-                    <Bill />
-                    <Bill />
-                    <Bill />
-                    <Bill />
+                    {
+                        bills?.map(bill => <Bill key={bill?._id} bill={bill} />)
+                    }
                 </div>
             </section>
-        </div>
     )
 }
 
