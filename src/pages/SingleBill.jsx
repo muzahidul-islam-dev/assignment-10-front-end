@@ -62,6 +62,7 @@ function SingleBill() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsSubmitting(true)
         if (formData?.phone == '' && formData?.address == '' && formData?.note == '') {
             return toast.error('All field is required.')
         }
@@ -74,8 +75,11 @@ function SingleBill() {
                 phone: '',
                 note: ''
             })
+            setIsSubmitting(false)
         }).catch(error => {
             console.log(error)
+            
+            setIsSubmitting(false)
         })
     }
 
@@ -231,6 +235,18 @@ function SingleBill() {
                                 />
                             </div>
 
+                            <div className='my-2'>
+                                <label className="text-sm font-medium block mb-1">Username</label>
+                                <input
+                                    type="text"
+                                    name="username"
+                                    placeholder="Enter your address"
+                                    value={formData.username}
+                                    onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+                                    className='border dark:border-gray-700 border-gray-200 focus:border-gray-500 dark:text-white w-full py-2 px-3 rounded my outline-none'
+                                    required
+                                />
+                            </div>
                             <div className='my-2'>
                                 <label className="text-sm font-medium block mb-1">Address</label>
                                 <input
