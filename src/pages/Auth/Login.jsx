@@ -1,7 +1,7 @@
 import React, { use, useState } from 'react'
 import Button from '../../components/Button'
 import { Eye, EyeOff } from 'lucide-react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import Google from './../../assets/google.png'
 import { UserProvider } from '../../context/AuthContext'
@@ -17,6 +17,9 @@ function Login() {
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate();
 
+    
+    const location = useLocation();
+    const redirectPath = location?.state?.from?.pathname || '/';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -44,7 +47,7 @@ function Login() {
             return toast.error(result.message)
         } else {
             toast.success(result.message)
-            navigate('/', {
+            navigate(redirectPath, {
                 replace: true
             })
         }

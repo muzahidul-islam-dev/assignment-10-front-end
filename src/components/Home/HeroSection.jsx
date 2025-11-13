@@ -1,6 +1,8 @@
 import React from 'react'
 
 import Banner1 from './../../assets/banner-1.jpg'
+import Banner2 from './../../assets/banner-2.jpg'
+import Banner3 from './../../assets/banner-3.jpg'
 import { Navigation, Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -31,7 +33,7 @@ function HeroSection() {
                             className={`absolute inset-0 transition-opacity duration-1000 opacity-100`}
                         >
                             <img
-                                src={Banner1 || "/placeholder.svg"}
+                                src={Banner1}
                                 alt={'banner 1'}
                                 className="object-cover w-full h-screen"
                             />
@@ -55,7 +57,7 @@ function HeroSection() {
                             className={`absolute inset-0 transition-opacity duration-1000 opacity-100`}
                         >
                             <img
-                                src={Banner1 || "/placeholder.svg"}
+                                src={Banner2}
                                 alt={'banner 1'}
                                 className="object-cover w-full h-screen"
                             />
@@ -79,7 +81,7 @@ function HeroSection() {
                             className={`absolute inset-0 transition-opacity duration-1000 opacity-100`}
                         >
                             <img
-                                src={Banner1 || "/placeholder.svg"}
+                                src={Banner3}
                                 alt={'banner 1'}
                                 className="object-cover w-full h-screen"
                             />

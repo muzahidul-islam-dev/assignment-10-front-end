@@ -42,19 +42,15 @@ function SingleBill() {
             const inputDate = new Date(bill?.date);
             const now = new Date();
 
-            let prevMonth = now.getMonth() - 1;
-            let prevYear = now.getFullYear();
+            let currentMonth = now.getMonth();
+            let currentYear = now.getFullYear();
 
-            if (prevMonth < 0) {
-                prevMonth = 11;
-                prevYear = prevYear - 1;
-            }
 
-            const isPreviousMonth =
-                inputDate.getFullYear() === prevYear &&
-                inputDate.getMonth() === prevMonth;
+            const isCurrentMonth =
+                inputDate.getFullYear() === currentYear &&
+                inputDate.getMonth() === currentMonth;
 
-            setCanPayNow(isPreviousMonth)
+            setCanPayNow(isCurrentMonth)
 
         }
     }, [bill])
@@ -123,10 +119,7 @@ function SingleBill() {
                                     <div className='lg:col-span-4'>
                                         <h1 className="text-xl md:text-3xl font-bold">{bill?.title}</h1>
                                         <p className="mt-1">{bill?.category} Utility Bill</p>
-                                    </div>
-                                    <div className="lg:text-right lg:col-span-2">
-                                        <div className="text-2xl font-bold ">{bill?.amount} BDT</div>
-                                        <p className="text-sm">Amount Due</p>
+                                        <p className="mt-5 text-gray-600">{bill?.description}</p>
                                     </div>
                                 </div>
                             </div>

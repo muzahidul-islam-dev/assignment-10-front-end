@@ -1,7 +1,7 @@
 import React, { use, useState } from 'react'
 import Button from '../../components/Button'
 import { Eye, EyeOff } from 'lucide-react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { UserProvider } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
 import Google from './../../assets/google.png'
@@ -18,7 +18,11 @@ function Register() {
 
     const { registerUsingCredintial, loginWithGoogle } = use(UserProvider)
 
+    const location = useLocation();
     const navigate = useNavigate();
+
+
+    const redirectPath = location?.state?.from?.pathname || '/';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -47,7 +51,7 @@ function Register() {
             }
         } else {
             toast.success(result.message)
-            navigate('/', {
+            navigate(redirectPath, {
                 replace: true
             })
         }

@@ -59,7 +59,7 @@ function Navbar() {
                     <div className="flex items-center gap-4">
                         <button
                             onClick={toggleTheme}
-                            className="p-2 rounded-lg transition"
+                            className="p-2 rounded-lg transition cursor-pointer"
                             aria-label="Toggle theme"
                         >
                             {isDark == 'dark' ? <Sun className="w-5 h-5 text-white" /> : <Moon className="w-5 h-5 text-gray-900" />}
