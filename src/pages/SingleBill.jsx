@@ -153,7 +153,7 @@ function SingleBill() {
 
                             <div className="bg-primary/10 dark:bg-gray-800 p-4 rounded-lg mb-6">
                                 <p className="text-sm mb-1">Total Amount Due</p>
-                                <p className="text-3xl font-bold">{bill?.amount}</p>
+                                <p className="text-3xl font-bold">{bill?.amount} BDT</p>
                             </div>
 
                             {canPayNow ? (
