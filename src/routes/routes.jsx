@@ -8,6 +8,7 @@ import Bills from "../pages/Bills";
 import SingleBill from "../pages/SingleBill";
 import MyBill from "../pages/MyBill";
 import ProtectedLayout from "../components/layout/ProtectedLayout";
+import NotFound from "../pages/NotFound";
 
 const routes = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const routes = createBrowserRouter([
       },
     ],
   },
+  {
+    path: '*',
+    element: <NotFound />
+  }
 ]);
 
 export default routes;

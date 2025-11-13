@@ -119,12 +119,12 @@ function SingleBill() {
                         <div className="space-y-6">
 
                             <div className="p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800">
-                                <div className="flex items-start justify-between mb-4">
-                                    <div>
+                                <div className="grid grid-cols-6 items-start justify-between mb-4">
+                                    <div className='col-span-4'>
                                         <h1 className="text-3xl font-bold">{bill?.title}</h1>
                                         <p className="mt-1">{bill?.category} Utility Bill</p>
                                     </div>
-                                    <div className="text-right">
+                                    <div className="text-right col-span-2">
                                         <div className="text-2xl font-bold ">{bill?.amount} BDT</div>
                                         <p className="text-sm">Amount Due</p>
                                     </div>

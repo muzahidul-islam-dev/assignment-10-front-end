@@ -6,6 +6,8 @@ import axios from 'axios'
 import { UserProvider } from '../context/AuthContext'
 import toast from 'react-hot-toast'
 import Swal from 'sweetalert2'
+import jsPDF from 'jspdf'
+import autoTable from 'jspdf-autotable'
 function MyBill() {
   const [bills, setBills] = useState([])
   const [showUpdateModal, setShowUpdateModal] = useState(false)
@@ -36,8 +38,42 @@ function MyBill() {
   }, [user, loading])
 
   const handleDownloadReport = () => {
+    if (!bills || bills.length === 0) {
+      alert('No data available to export!');
+      return;
+    }
 
-  }
+    const columns = [
+      { key: 'username', name: 'Username' },
+      { key: 'email', name: 'Email' },
+      { key: 'amount', name: 'Amount' },
+      { key: 'address', name: 'Address' },
+      { key: 'phone', name: 'Phone' },
+      { key: 'date', name: 'Date' }
+    ];
+
+    const rows = bills.map(bill => ({
+      username: bill?.username || '',
+      email: bill?.email || '',
+      amount: (bill?.amount || 0) + " BDT",
+      address: bill?.address || '',
+      phone: bill?.phone || '',
+      date: bill?.date || ''
+    }));
+
+    const pdf = new jsPDF();
+    pdf.text('Data Export Report', 14, 10);
+
+    const tableColumn = columns.map(col => col.name);
+    const tableRows = rows.map(row => columns.map(col => row[col.key]));
+
+    autoTable(pdf, {
+      head: [tableColumn],
+      body: tableRows,
+    });
+
+    pdf.save('data_report.pdf');
+  };
 
   const handleEdit = (bill) => {
     document.getElementById('my_modal_2').showModal()
@@ -133,7 +169,7 @@ function MyBill() {
             Download Report
           </Button>
         </div>
-        
+
 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -143,7 +179,7 @@ function MyBill() {
           </div>
           <div className="p-6 bg-red-500 rounded">
             <p className="text-sm mb-1 text-white">Total Amount</p>
-            <p className="text-3xl font-bold text-white">${Number(1).toFixed(2)}</p>
+            <p className="text-3xl font-bold text-white">{bills?.reduce((bill, prevValue) => bill += Number(prevValue?.amount), 0)} BDT</p>
           </div>
         </div>
 
@@ -167,7 +203,7 @@ function MyBill() {
                   <tr key={bill._id} className="hover:bg-muted/50 transition">
                     <td className="px-6 py-4 text-sm">{bill.username}</td>
                     <td className="px-6 py-4 text-sm">{bill.email}</td>
-                    <td className="px-6 py-4 text-sm font-semibold">{bill.amount}</td>
+                    <td className="px-6 py-4 text-sm font-semibold">{bill.amount} BDT</td>
                     <td className="px-6 py-4 text-sm">{bill.address}</td>
                     <td className="px-6 py-4 text-sm">{bill.phone}</td>
                     <td className="px-6 py-4 text-sm">{bill.date}</td>

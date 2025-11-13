@@ -75,7 +75,7 @@ function Navbar() {
                                     onClick={() => setShowProfileMenu(!showProfileMenu)}
                                     className="w-8 h-8 rounded-full bg-blue-800 flex items-center justify-center hover:opacity-80 transition cursor-pointer"
                                 >
-                                    <User className="w-4 h-4 text-white" />
+                                    {user?.photoURL ? <img src={user?.photoURL} className='w-7 h-7 rounded-full' alt={user?.displayName} /> : <User className="w-4 h-4 text-white" />}
                                 </button>
 
                                 {showProfileMenu && (
