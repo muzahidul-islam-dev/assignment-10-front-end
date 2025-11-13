@@ -6,7 +6,7 @@ import routes from './routes/routes.jsx'
 import AuthContext from './context/AuthContext.jsx'
 import { Toaster } from 'react-hot-toast'
 import axios from 'axios'
-axios.defaults.baseURL = 'http://localhost:5001'
+axios.defaults.baseURL = 'https://app-ivory-omega.vercel.app'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthContext>
