@@ -1,6 +1,7 @@
 import { Facebook, Linkedin, Mail, MapPin, Phone, Twitter, X } from 'lucide-react'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import TwitterIcon from './../../assets/twitter.jpg'
 
 function Footer() {
     return (
@@ -77,7 +78,7 @@ function Footer() {
                                 href="#"
                                 className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center hover:opacity-80"
                             >
-                                <X className='h-5 text-white' />
+                                <img src={TwitterIcon} className='h-5' alt="" />
                             </a>
                             <a
                                 href="#"

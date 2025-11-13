@@ -42,7 +42,7 @@ function HeroSection() {
                                 <div className="text-center text-white px-4 max-w-2xl">
                                     <h1 className="text-3xl md:text-5xl font-bold mb-4">24/7 Bill Access</h1>
                                     <p className="text-lg md:text-xl mb-8">Access and pay your bills anytime, anywhere with our mobile-friendly platform</p>
-                                    <Link href="/bills">
+                                    <Link to="/bills">
                                         <Button>
                                             View Bills
                                         </Button>
@@ -66,7 +66,7 @@ function HeroSection() {
                                 <div className="text-center text-white px-4 max-w-2xl">
                                     <h1 className="text-3xl md:text-5xl font-bold mb-4">Pay Bills Easily and Securely</h1>
                                     <p className="text-lg md:text-xl mb-8">Manage all your utility bills in one place with quick and secure payments</p>
-                                    <Link href="/bills">
+                                    <Link to="/bills">
                                         <Button>
                                             View Bills
                                         </Button>
@@ -90,7 +90,7 @@ function HeroSection() {
                                 <div className="text-center text-white px-4 max-w-2xl">
                                     <h1 className="text-3xl md:text-5xl font-bold mb-4">Track Your Usage</h1>
                                     <p className="text-lg md:text-xl mb-8">Monitor your utility consumption and get detailed billing insights</p>
-                                    <Link href="/bills">
+                                    <Link to="/bills">
                                         <Button>
                                             View Bills
                                         </Button>
