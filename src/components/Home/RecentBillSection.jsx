@@ -8,7 +8,7 @@ function RecentBillSection() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        axios.get('/bill').then(response => {
+        axios.get('/bill/recent-bill/all').then(response => {
             setBills(response?.data?.data?.slice(0, 6))
             setLoading(false)
         }).catch(error => {
