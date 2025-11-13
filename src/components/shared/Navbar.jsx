@@ -15,6 +15,11 @@ function Navbar() {
 
     console.log(user, 'this is user')
 
+    useEffect(() => {
+        const themeData = localStorage.getItem('theme')
+        setIsDark(themeData)
+    },[])
+
     const toggleTheme = () => {
         const html = document.querySelector('html')
         if(html.getAttribute('data-theme') == 'dark'){
@@ -34,7 +39,7 @@ function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <Link to="/" className="flex items-center gap-2">
-                        <span className="font-bold text-lg hidden sm:inline text-gray-900 dark:text-white">UtilityBill</span>
+                        <span className="font-bold text-lg text-gray-900 dark:text-white">UtilityBill</span>
                     </Link>
 
                     <div className="hidden md:flex items-center gap-8">
@@ -97,23 +102,23 @@ function Navbar() {
 
                 {isOpen && (
                     <div className="md:hidden pb-4 space-y-2">
-                        <Link href="/" className="block px-2 py-2 rounded text-gray-900">
+                        <Link to="/" className="block px-2 py-2 rounded text-gray-900 dark:text-white">
                             Home
                         </Link>
-                        <Link href="/bills" className="block px-2 py-2 rounded text-gray-900">
+                        <Link to="/bills" className="block px-2 py-2 rounded text-gray-900 dark:text-white">
                             Bills
                         </Link>
                         {user && (
-                            <Link href="/my-bills" className="block px-2 py-2 rounded text-gray-900">
+                            <Link to="/my-bills" className="block px-2 py-2 rounded text-gray-900 dark:text-white">
                                 My Pay Bills
                             </Link>
                         )}
                         {!user && (
                             <>
-                                <Link to="/auth/login" className="block px-2 py-2 rounded text-gray-900">
+                                <Link to="/auth/login" className="block px-2 py-2 rounded text-gray-900 dark:text-white">
                                     Login
                                 </Link>
-                                <Link to="/auth/register" className="block px-2 py-2 rounded text-gray-900">
+                                <Link to="/auth/register" className="block px-2 py-2 rounded text-gray-900 dark:text-white">
                                     Register
                                 </Link>
                             </>

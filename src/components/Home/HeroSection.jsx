@@ -17,12 +17,13 @@ function HeroSection() {
                     slidesPerView={1}
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
-                    className='h-screen'
+                    className='h-[400px] md:h-[700px] lg:h-screen'
                     modules={[Pagination, Navigation]}
                     pagination={{
                         type: 'fraction',
                     }}
                     navigation={true}
+                    
                 >
                     <SwiperSlide>
                         <div
@@ -32,13 +33,13 @@ function HeroSection() {
                             <img
                                 src={Banner1 || "/placeholder.svg"}
                                 alt={'banner 1'}
-                                className="object-cover w-full"
+                                className="object-cover w-full h-screen"
                             />
                             <div className="absolute inset-0 bg-black/40" />
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="text-center text-white px-4 max-w-2xl">
-                                    <h1 className="text-3xl md:text-5xl font-bold mb-4">This is title</h1>
-                                    <p className="text-lg md:text-xl mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sapiente qui neque quam dolorem culpa ducimus? Optio quod, quia molestias, ullam necessitatibus quibusdam minus doloribus repellat dolores saepe sint voluptas.</p>
+                                    <h1 className="text-3xl md:text-5xl font-bold mb-4">24/7 Bill Access</h1>
+                                    <p className="text-lg md:text-xl mb-8">Access and pay your bills anytime, anywhere with our mobile-friendly platform</p>
                                     <Link href="/bills">
                                         <Button>
                                             View Bills
@@ -56,13 +57,13 @@ function HeroSection() {
                             <img
                                 src={Banner1 || "/placeholder.svg"}
                                 alt={'banner 1'}
-                                className="object-cover w-full"
+                                className="object-cover w-full h-screen"
                             />
                             <div className="absolute inset-0 bg-black/40" />
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="text-center text-white px-4 max-w-2xl">
-                                    <h1 className="text-3xl md:text-5xl font-bold mb-4">This is title</h1>
-                                    <p className="text-lg md:text-xl mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sapiente qui neque quam dolorem culpa ducimus? Optio quod, quia molestias, ullam necessitatibus quibusdam minus doloribus repellat dolores saepe sint voluptas.</p>
+                                    <h1 className="text-3xl md:text-5xl font-bold mb-4">Pay Bills Easily and Securely</h1>
+                                    <p className="text-lg md:text-xl mb-8">Manage all your utility bills in one place with quick and secure payments</p>
                                     <Link href="/bills">
                                         <Button>
                                             View Bills
@@ -80,13 +81,13 @@ function HeroSection() {
                             <img
                                 src={Banner1 || "/placeholder.svg"}
                                 alt={'banner 1'}
-                                className="object-cover w-full"
+                                className="object-cover w-full h-screen"
                             />
                             <div className="absolute inset-0 bg-black/40" />
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="text-center text-white px-4 max-w-2xl">
-                                    <h1 className="text-3xl md:text-5xl font-bold mb-4">This is title</h1>
-                                    <p className="text-lg md:text-xl mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sapiente qui neque quam dolorem culpa ducimus? Optio quod, quia molestias, ullam necessitatibus quibusdam minus doloribus repellat dolores saepe sint voluptas.</p>
+                                    <h1 className="text-3xl md:text-5xl font-bold mb-4">Track Your Usage</h1>
+                                    <p className="text-lg md:text-xl mb-8">Monitor your utility consumption and get detailed billing insights</p>
                                     <Link href="/bills">
                                         <Button>
                                             View Bills

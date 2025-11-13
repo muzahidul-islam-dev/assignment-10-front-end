@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 @import "tailwindcss";
+
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark, cupcake;
 }
@@ -10,7 +11,8 @@ body {
 }
 
 :root {
-  --color-primary: #1e3a8a; /* blue-900 */
+  --color-primary: #1e3a8a;
+  /* blue-900 */
 }
 
 /* Custom class for primary text */
@@ -18,8 +20,29 @@ body {
   color: var(--color-primary);
 }
 
-.bg-primary{
+.bg-primary {
   background-color: var(--color-primary);
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+.swiper-button-next {
+  color: white;
+  font-size: 20px;
+  height: 40px;
+  background: white;
+  color: #000;
+  width: 40px;
+  padding: 10px;
+  border-radius: 50%;
+}
+.swiper-button-prev {
+  color: white;
+  font-size: 20px;
+  height: 40px;
+  background: white;
+  color: #000;
+  width: 40px;
+  padding: 10px;
+  border-radius: 50%;
+}
