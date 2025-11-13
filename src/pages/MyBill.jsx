@@ -29,12 +29,12 @@ function MyBill() {
     note: ''
   })
   useEffect(() => {
-    if (user && !loading) {
+    if (user && !userLoading) {
       axios.get(`/bill/my-bills/${user?.email}`).then(response => {
         setBills(response?.data?.data)
+        setLoading(false)
       })
     }
-    setLoading(false)
   }, [user, loading])
 
   const handleDownloadReport = () => {
