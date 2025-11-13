@@ -119,7 +119,7 @@ function SingleBill() {
                                     <div className='lg:col-span-4'>
                                         <h1 className="text-xl md:text-3xl font-bold">{bill?.title}</h1>
                                         <p className="mt-1">{bill?.category} Utility Bill</p>
-                                        <p className="mt-5 text-gray-600">{bill?.description}</p>
+                                        <p className="mt-5 text-gray-600 dark:text-white">{bill?.description}</p>
                                     </div>
                                 </div>
                             </div>
