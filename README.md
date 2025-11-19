@@ -1,16 +1,63 @@
-# React + Vite
+# Bill Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Project Overview  
+Bill Management is a web application that allows users to easily add, edit, and manage their bills. It helps users track their expenses efficiently and organize their financial data in a user-friendly way.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Screenshot  
+![Bill Management Screenshot](https://bill-management-seven.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fscreenshot.abcdef.png&w=1920&q=75)  
+*Note: Replace the above image URL with the actual screenshot URL from your project.*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Technologies Used  
+- **React.js** (Next.js framework)  
+- **Tailwind CSS** (for styling)  
+- **JavaScript**  
+- **Vercel** (for hosting and deployment)  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Key Features  
+- Add, edit, and delete bills easily  
+- Category-wise bill management  
+- Responsive design for both mobile and desktop  
+- Fast and user-friendly interface  
+
+---
+
+## Dependencies  
+- react  
+- next  
+- tailwindcss  
+- autoprefixer  
+- postcss  
+- react-icons  
+- clsx  
+
+---
+
+## How to Run Locally  
+1. Clone the repository:  
+```bash
+git clone https://github.com/yourusername/bill-management.git
+Navigate to the project directory:
+
+bash
+Copy code
+cd bill-management
+Install dependencies:
+
+bash
+Copy code
+npm install
+Start the development server:
+
+bash
+Copy code
+npm run dev
+Open your browser and visit: http://localhost:3000
+
