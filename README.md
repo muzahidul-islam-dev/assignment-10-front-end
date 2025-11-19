@@ -28,14 +28,26 @@ Bill Management is a web application that allows users to easily add, edit, and 
 
 ---
 
-## Dependencies  
-- react  
-- next  
-- tailwindcss  
-- autoprefixer  
-- postcss  
-- react-icons  
-- clsx  
+## Dependencies
+
+The project relies on the following key dependencies:
+
+| Package          | Version  |
+|------------------|----------|
+| @tailwindcss/vite| ^4.1.17  |
+| axios            | ^1.13.2  |
+| firebase         | ^12.5.0  |
+| jspdf            | ^3.0.3   |
+| jspdf-autotable  | ^5.0.2   |
+| lottie-react     | ^2.4.1   |
+| lucide-react     | ^0.553.0 |
+| react            | ^19.2.0  |
+| react-dom        | ^19.2.0  |
+| react-hot-toast  | ^2.6.0   |
+| react-router-dom | ^7.9.5   |
+| sweetalert2      | ^11.26.3 |
+| swiper           | ^12.0.3  |
+| tailwindcss      | ^4.1.17  |
 
 ---
 
