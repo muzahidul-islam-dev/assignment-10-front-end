@@ -8,7 +8,7 @@ Bill Management is a web application that allows users to easily add, edit, and 
 ---
 
 ## Screenshot  
-![Bill Management Screenshot](https://bill-management-seven.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fscreenshot.abcdef.png&w=1920&q=75)  
+![Bill Management Screenshot]([https://bill-management-seven.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fscreenshot.abcdef.png&w=1920&q=75](https://github.com/muzahidul-islam-dev/assignment-10-front-end/blob/main/screenshot.png))  
 *Note: Replace the above image URL with the actual screenshot URL from your project.*
 
 ---
