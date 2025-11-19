@@ -44,7 +44,9 @@ Bill Management is a web application that allows users to easily add, edit, and 
 1. Clone the repository:  
 ```bash
 git clone https://github.com/yourusername/bill-management.git
-Navigate to the project directory:
+```
+
+2. Navigate to the project directory:
 
 bash
 Copy code
