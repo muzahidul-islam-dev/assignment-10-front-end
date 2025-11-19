@@ -9,7 +9,6 @@ Bill Management is a web application that allows users to easily add, edit, and 
 
 ## Screenshot  
 ![Bill Management Screenshot](https://github.com/muzahidul-islam-dev/assignment-10-front-end/blob/main/screenshot.png)  
-*Note: Replace the above image URL with the actual screenshot URL from your project.*
 
 ---
 
