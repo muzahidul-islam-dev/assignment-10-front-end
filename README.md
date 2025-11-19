@@ -48,18 +48,18 @@ git clone https://github.com/yourusername/bill-management.git
 
 2. Navigate to the project directory:
 
-bash
-Copy code
+```bash
 cd bill-management
-Install dependencies:
+```
+3. Install dependencies:
 
-bash
-Copy code
+```bash
 npm install
-Start the development server:
+```
+4. Start the development server:
 
-bash
-Copy code
+```bash
 npm run dev
+```
 Open your browser and visit: http://localhost:3000
 
